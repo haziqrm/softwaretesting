@@ -50,10 +50,6 @@ jobs:
           name: coverage-report
           path: target/site/jacoco/
 
-      - name: Check Coverage Thresholds
-      #  run: |
-      #    ./mvnw verify
-
       - name: Run Static Analysis
         run: |
           ./mvnw checkstyle:check || true
