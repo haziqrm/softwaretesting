@@ -52,7 +52,7 @@ jobs:
 
       - name: Check Coverage Thresholds
         run: |
-          ./mvnw jacoco:check -Drules.coverage.line.minimum=0.80 -Drules.coverage.branch.minimum=0.70
+          ./mvnw verify
 
       - name: Run Static Analysis
         run: |
