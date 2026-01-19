@@ -23,27 +23,22 @@ jobs:
 
       - name: Build with Maven
         run: |
-          cd backend
           ./mvnw clean compile
 
       - name: Run Unit Tests
         run: |
-          cd backend
           ./mvnw test -Dtest="*Test" -DfailIfNoTests=false
 
       - name: Run Integration Tests
         run: |
-          cd backend
           ./mvnw test -Dtest="*IntegrationTest" -DfailIfNoTests=false
 
       - name: Run System Tests
         run: |
-          cd backend
           ./mvnw test -Dtest="PathValiditySystemTest,PerformanceSystemTest,EndToEndSystemTest" -DfailIfNoTests=false
 
       - name: Generate Coverage Report
         run: |
-          cd backend
           ./mvnw jacoco:report
 
       - name: Upload Coverage Report
@@ -54,17 +49,14 @@ jobs:
 
       - name: Check Coverage Thresholds
         run: |
-          cd backend
           ./mvnw jacoco:check -Drules.coverage.line.minimum=0.80 -Drules.coverage.branch.minimum=0.70
 
       - name: Run Static Analysis
         run: |
-          cd backend
           ./mvnw checkstyle:check || true
 
       - name: Package Application
         run: |
-          cd backend
           ./mvnw package -DskipTests
 
       - name: Build Docker Image
@@ -90,12 +82,10 @@ jobs:
 
       - name: Run SpotBugs
         run: |
-          cd backend
           ./mvnw compile spotbugs:check || true
 
       - name: Run PMD
         run: |
-          cd backend
           ./mvnw pmd:check || true
 
       - name: Upload Quality Reports
@@ -121,7 +111,7 @@ jobs:
 
       - name: Run Performance Tests
         run: |
-          cd backend
+ 
           ./mvnw test -Dtest="PathfindingPerformanceTest,PositioningAccuracyTest" -DfailIfNoTests=false
 
       - name: Upload Performance Results
