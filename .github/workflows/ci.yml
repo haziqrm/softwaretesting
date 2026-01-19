@@ -45,7 +45,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: coverage-report
-          path: backend/target/site/jacoco/
+          path: target/site/jacoco/
 
       - name: Check Coverage Thresholds
         run: |
@@ -92,7 +92,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: quality-reports
-          path: backend/target/site/
+          path: target/site/
 
   performance-test:
     runs-on: ubuntu-latest
@@ -118,4 +118,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: performance-results
-          path: backend/target/surefire-reports/
+          path: target/surefire-reports/
