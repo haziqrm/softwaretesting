@@ -89,7 +89,7 @@ jobs:
           ./mvnw pmd:check || true
 
       - name: Upload Quality Reports
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: quality-reports
           path: target/site/
