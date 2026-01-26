@@ -48,7 +48,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: coverage-report
-          path: report/
+          path: target/site/jacoco/
 
       - name: Run Static Analysis
         run: |
@@ -94,7 +94,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: quality-reports
-          path: report/
+          path: target/site/
 
   performance-test:
     runs-on: ubuntu-latest
