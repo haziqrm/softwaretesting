@@ -205,7 +205,7 @@ class RestrictedAreaServiceIntegrationTest {
         // Arrange
         Position from = new Position(-3.1850, 55.9400);
         //when(mockRepository.fetchRestrictedAreas()).thenReturn(Arrays.asList(georgeSquare));
-
+        //c ommit
         // Act
         boolean crosses = restrictedAreaService.pathCrossesRestrictedArea(from, null);
 
